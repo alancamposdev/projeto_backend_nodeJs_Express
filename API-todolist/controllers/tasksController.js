@@ -59,6 +59,8 @@ const createTask = (req, res) => {
     }
     );
 
+    res.status(201).json({ msg: 'Tarefa criada com sucesso', Tasks });
+
   } catch (err) {
     res.status(500).json({
       msg: "Erro ao criar uma tarefa: " + err
@@ -69,7 +71,38 @@ const createTask = (req, res) => {
 
 // Atualizar uma tarefa no arquivo JSON
 const updateTask = (req, res) => {
-  res.send('Hello World');
+  //
+  try {
+
+    const id = req.params.id;    
+    const task = Tasks.findIndex(task => task.id == id);
+
+    if(task === -1){
+      return res.status(404).json({
+        msg: "Tarefa não encontrada"
+      });
+    }
+
+    Tasks[task] = { ...Tasks[task], ...req.body };
+
+    fs.writeFile(tasksPath, JSON.stringify(Tasks), (err) => {
+      if (err) {
+        res.status(500).json({
+          msg: "Erro ao atualizar a tarefa no arquivo"
+        });
+      }
+    }); 
+
+    res.status(200).json({
+      msg: 'Tarefa atualizada com sucesso',
+      Tasks
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      msg: "Erro ao atualizar uma tarefa: " + err
+    });
+  }
 }
 
 // Deletar uma tarefa do arquivo JSON
