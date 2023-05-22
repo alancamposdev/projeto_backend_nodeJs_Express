@@ -36,6 +36,27 @@ const showTask = (req, res) => {
   });
 }
 
+// Mostrar uma tarefa específica
+const showTaskId = (req, res) => {
+  try {
+
+    const id = req.params.id;
+    const task = Tasks.find(task => task.id == id);
+
+    if (!task) {
+      return res.status(404).json({
+        msg: "Tarefa não encontrada"
+      });
+    } else {
+      res.status(200).json(task);
+    }
+
+  } catch (err) {
+    res.status(500).json({ msg: "Erro ao mostrar uma tarefa: " + err });
+  }
+};
+
+
 // Criar uma tarefa no arquivo JSON
 const createTask = (req, res) => {
   try {
@@ -144,6 +165,7 @@ const deleteTask = (req, res) => {
 module.exports = {
   index,
   showTask,
+  showTaskId,
   createTask,
   updateTask,
   deleteTask

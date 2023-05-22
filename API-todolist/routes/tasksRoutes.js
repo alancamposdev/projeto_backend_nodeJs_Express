@@ -7,7 +7,7 @@ const exampleMiddleware = require('../middlewares/example');
 
 router.get('/',             tasksController.index);
 router.get('/tasks',        tasksController.showTask);
-router.get('/tasks/:id',    tasksController.showTask);
+router.get('/tasks/:id',    tasksController.showTaskId);
 router.post('/tasks',       tasksController.createTask);
 router.put('/tasks/:id',    tasksController.updateTask);
 router.delete('/tasks/:id', tasksController.deleteTask);
