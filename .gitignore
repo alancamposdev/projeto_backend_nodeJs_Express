@@ -1,0 +1,9 @@
+# Dependências de diretórios 
+node_modules
+
+# variáveis de ambiente
+.env
+
+# Vscode
+.vscode
+.vscode-test
