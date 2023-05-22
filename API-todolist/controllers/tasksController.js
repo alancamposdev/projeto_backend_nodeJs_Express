@@ -52,7 +52,9 @@ const showTaskId = (req, res) => {
     }
 
   } catch (err) {
-    res.status(500).json({ msg: "Erro ao mostrar uma tarefa: " + err });
+    res.status(500).json({
+      msg: "Erro ao mostrar uma tarefa: " + err
+    });
   }
 };
 
@@ -77,10 +79,12 @@ const createTask = (req, res) => {
           msg: "Erro ao gravar a tarefa no arquivo"
         });
       }
-    }
-    );
+    });
 
-    res.status(201).json({ msg: 'Tarefa criada com sucesso', Tasks });
+    res.status(201).json({
+      msg: 'Tarefa criada com sucesso',
+      Tasks
+    });
 
   } catch (err) {
     res.status(500).json({
@@ -95,16 +99,16 @@ const updateTask = (req, res) => {
   //
   try {
 
-    const id = req.params.id;    
+    const id = req.params.id;
     const task = Tasks.findIndex(task => task.id == id);
 
-    if(task === -1){
+    if (task === -1) {
       return res.status(404).json({
         msg: "Tarefa não encontrada"
       });
     }
 
-    Tasks[task] = { ...Tasks[task], ...req.body };
+    Tasks[task] = { ...Tasks[task],...req.body };
 
     fs.writeFile(tasksPath, JSON.stringify(Tasks), (err) => {
       if (err) {
@@ -112,12 +116,10 @@ const updateTask = (req, res) => {
           msg: "Erro ao atualizar a tarefa no arquivo"
         });
       }
-    }); 
-
-    res.status(200).json({
-      msg: 'Tarefa atualizada com sucesso',
-      Tasks
     });
+
+    res.status(200).json({msg: 'Tarefa atualizada com sucesso',  Tasks });
+      
 
   } catch (err) {
     res.status(500).json({
@@ -128,12 +130,12 @@ const updateTask = (req, res) => {
 
 // Deletar uma tarefa do arquivo JSON
 const deleteTask = (req, res) => {
-  try{
+  try {
 
     const id = req.params.id;
     const task = Tasks.findIndex(task => task.id == id);
 
-    if(task === -1){
+    if (task === -1) {
       return res.status(404).json({
         msg: "Tarefa não encontrada"
       });
@@ -146,15 +148,11 @@ const deleteTask = (req, res) => {
           msg: "Erro ao deletar a tarefa no arquivo"
         });
       }
-    }); 
-    
-    res.status(200).json({
-      msg: 'Tarefa deletada com sucesso',
-      Tasks
     });
 
-
-  }catch(err){
+    res.status(200).json({ msg: 'Tarefa deletada com sucesso', Tasks });
+   
+  } catch (err) {
     res.status(500).json({
       msg: "Erro ao deletar uma tarefa: " + err
     });

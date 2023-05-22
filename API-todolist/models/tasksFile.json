@@ -1,1 +1,1 @@
-[{},{"id":2,"task":"Comprar leite","status":"pendente","created":"Mon, 22 May 2023 23:18:02 GMT"},{"id":3,"task":"Comprar pão","status":"pendente","created":"Mon, 22 May 2023 23:18:13 GMT"},{"id":5,"task":"Estudar Node","status":"estudanto","created":"Mon, 22 May 2023 23:18:41 GMT"}]
+[{"id":1,"task":"Estudar NodeJs","status":"estudando","created":"Mon, 22 May 2023 23:31:22 GMT"},{"id":2,"task":"Estudar NodeJs","status":"pendente","created":"Mon, 22 May 2023 23:32:30 GMT"},{"id":3,"task":"Tomar café","status":"pendente","created":"Mon, 22 May 2023 23:32:46 GMT"}]

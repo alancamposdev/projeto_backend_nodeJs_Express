@@ -3,7 +3,7 @@
 > Professor: Orlando Fonseca Guilarte
 
 ## Projeto TODO LIST
-> Status: em revisão
+> Status: concluido
 
 ## Objetivo 
 
