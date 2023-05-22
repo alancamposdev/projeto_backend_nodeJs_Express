@@ -1,0 +1,34 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "projeto de uma API para disciplina Backend_Node_Express",
+  "main": "app.js",
+  "scripts": {    
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alancamposdev/projeto_backend_nodeJs_Express.git"
+  },
+  "keywords": [
+    "Backend",
+    "API",
+    "Nodejs",
+    "NPM",
+    "Express",
+    "CRUD"
+  ],
+  "author": "Alan Campos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alancamposdev/projeto_backend_nodeJs_Express/issues"
+  },
+  "homepage": "https://github.com/alancamposdev/projeto_backend_nodeJs_Express#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
