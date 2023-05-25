@@ -24,3 +24,37 @@
         | D   | Delete         | DELETE       | Excluir   |
 
 - Entre outras....
+
+## Instalação
+
+Clone o repositório do projeto no seu computador: 
+```git
+git clone https://github.com/alancamposdev/projeto_backend_nodeJs_Express.git
+``` 
+
+
+Abra o terminal na pasta raiz do projeto e entre na pasta da API-todolist: `cd .\API-todolist\` e instale as dependências do projeto com o comando 
+``` 
+$ npm install 
+```
+
+├── dotenv@16.0.3  \
+├── express@4.18.2  \
+└── nodemon@2.0.22  
+
+Inicie o servidor com comando:
+
+``` 
+npm run start 
+``` 
+
+o projeto irá rodar na porta 
+` http://localhost:3000/ `;
+
+
+## As rotas da Aplicação
+
+└── http://localhost:3000/     \
+└── http://localhost:3000/tasks
+
+
