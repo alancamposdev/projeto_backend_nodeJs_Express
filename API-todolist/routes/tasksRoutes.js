@@ -5,11 +5,12 @@ const tasksController = require('../controllers/tasksController');
 
 const exampleMiddleware = require('../middlewares/example');
 
-router.get('/',             tasksController.index);
-router.get('/tasks', exampleMiddleware,tasksController.showTask);
-router.get('/tasks/:id',    tasksController.showTaskId);
-router.post('/tasks',       tasksController.createTask);
-router.put('/tasks/:id',    tasksController.updateTask);
-router.delete('/tasks/:id', tasksController.deleteTask);
+router
+  .get('/',             tasksController.index)
+  .get('/tasks', exampleMiddleware,tasksController.showTask)
+  .get('/tasks/:id',    tasksController.showTaskId)
+  .post('/tasks',       tasksController.createTask)
+  .put('/tasks/:id',    tasksController.updateTask)
+  .delete('/tasks/:id', tasksController.deleteTask)
 
 module.exports = router;

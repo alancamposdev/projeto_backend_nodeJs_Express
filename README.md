@@ -33,14 +33,14 @@ git clone https://github.com/alancamposdev/projeto_backend_nodeJs_Express.git
 ``` 
 
 
-Abra o terminal na pasta raiz do projeto e entre na pasta da API-todolist: `cd .\API-todolist\` e instale as dependências do projeto com o comando 
-``` 
+Abra o terminal na pasta raiz do projeto e entre na pasta da API-todolist: `cd .\API-todolist\` e instale as dependências do projeto com o comando
+```shell 
 $ npm install 
 ```
-
-├── dotenv@16.0.3  \
-├── express@4.18.2  \
-└── nodemon@2.0.22  
+I- Dependências  
+├── dotenv@16.0.3  
+├── express@4.18.2  
+└── nodemon@2.0.22   
 
 Inicie o servidor com comando:
 
@@ -55,6 +55,19 @@ o projeto irá rodar na porta
 ## As rotas da Aplicação
 
 └── http://localhost:3000/     \
-└── http://localhost:3000/tasks
+└── http://localhost:3000/tasks \
+└── http://localhost:3000/tasks/id
+
+
+## Use o framework Insomnia ou Postman para testar as rodas da API.
+
+[insomnia](https://insomnia.rest/download)   
+[postman](https://www.postman.com/downloads/)
+
+
+
+---
+ 
+## Valeu Obrigado 👍
 
 
