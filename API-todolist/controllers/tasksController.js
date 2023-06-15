@@ -1,5 +1,7 @@
 const Tasks = require('../models/tasksFile.json');
 
+const task = require('../models/Task'); 
+
 
 // Modulo FS para ler e escrever arquivos
 const fs = require('fs');
@@ -25,15 +27,27 @@ const index = (req, res) => {
 // Mostrar um arquivo JSON com as tarefas
 const showTask = (req, res) => {
 
-  fs.readFile(tasksPath, (err, data) => {
+  // fs.readFile(tasksPath, (err, data) => {
+  //   if (err) {
+  //     res.status(500).json({
+  //       msg: "Erro ao ler o arquivo de tarefas"
+  //     });
+  //   }
+  //   const tasks = JSON.parse(data);
+  //   res.json(tasks);
+  // });
+
+  task.find((err, tarefa) => {
     if (err) {
       res.status(500).json({
-        msg: "Erro ao ler o arquivo de tarefas"
-      });
+        msg: "Erro ao buscar as tarefas no banco de dados"
+        });        
     }
-    const tasks = JSON.parse(data);
-    res.json(tasks);
-  });
+
+    res.status(200).json(tarefa);
+    
+    });
+       
 }
 
 // Mostrar uma tarefa específica

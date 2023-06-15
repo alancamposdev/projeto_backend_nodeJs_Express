@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "projeto de uma API para disciplina Backend_Node_Express",
   "main": "app.js",
-  "scripts": {    
+  "scripts": {
     "start": "nodemon app.js"
   },
   "repository": {
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^6.2.6"
   }
 }
